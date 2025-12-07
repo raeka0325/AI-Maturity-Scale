@@ -197,16 +197,19 @@ function selectOption(questionIndex, value) {
 
     updateUI();
 
-    // 自動跳到下一題或顯示結果
-    setTimeout(() => {
-        if (currentQuestion < questions.length - 1) {
-            currentQuestion++;
-            updateUI();
-        } else {
-            // 最後一題，顯示結果
-            showResults();
-        }
-    }, 500);
+    // 只有在選擇當前顯示的題目時才自動跳轉
+    if (questionIndex === currentQuestion) {
+        // 自動跳到下一題或顯示結果
+        setTimeout(() => {
+            if (questionIndex < questions.length - 1) {
+                currentQuestion = questionIndex + 1;
+                updateUI();
+            } else {
+                // 最後一題，顯示結果
+                showResults();
+            }
+        }, 500);
+    }
 }
 
 // 下一題
