@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI成熟度評估工具 - 策略與治理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI成熟度評估工具</h1>
+            <p>策略與治理面向評估</p>
+        </div>
+
+        <div class="content">
+            <div id="coverPage" class="cover-page">
+                <div class="cover-icon">🤖</div>
+                <h1 class="cover-title">AI成熟度評估工具</h1>
+                <p class="cover-subtitle">策略與治理面向評估</p>
+                <p class="cover-description">
+                    透過5個精心設計的問題，快速評估您組織在AI策略、治理、倫理、領導力和資源配置等面向的成熟度，並獲得專業的改進建議。
+                </p>
+                <div class="cover-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">僅需5題</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">即時評分</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <div class="feature-text">專業建議</div>
+                    </div>
+                </div>
+                <button class="start-btn" onclick="startAssessment()">開始評估</button>
+            </div>
+
+            <div id="assessmentSection" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="question-counter" id="questionCounter">問題 1 / 5</div>
+
+                <div id="questionsContainer"></div>
+
+                <div class="navigation">
+                    <button class="restart-btn" onclick="confirmRestart()">重新開始</button>
+                    <button class="nav-btn prev" id="prevBtn" onclick="previousQuestion()">上一題</button>
+                </div>
+            </div>
+
+            <div class="results" id="results">
+                <div class="maturity-level">
+                    <h3>您的AI成熟度等級</h3>
+                    <div class="level" id="maturityLevel">-</div>
+                    <div class="level-indicator" id="levelIndicator">
+                        <div class="level-dot">L1</div>
+                        <div class="level-connector"></div>
+                        <div class="level-dot">L2</div>
+                        <div class="level-connector"></div>
+                        <div class="level-dot">L3</div>
+                        <div class="level-connector"></div>
+                        <div class="level-dot">L4</div>
+                        <div class="level-connector"></div>
+                        <div class="level-dot">L5</div>
+                    </div>
+                    <div class="score">總分：<span id="totalScore">0</span> / 10</div>
+                </div>
+
+                <div class="level-description">
+                    <h4 id="levelTitle">-</h4>
+                    <p id="levelDescription">-</p>
+                </div>
+
+                <div class="recommendations">
+                    <h3>改進建議</h3>
+                    <div id="recommendationsList"></div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="restart-btn" onclick="resetAssessment()">重新開始</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
